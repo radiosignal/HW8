@@ -8,9 +8,31 @@
         <img src="../img/<?=$item['image']?>" alt="img" width="150"><br>
         <p>price: <?=$item['price']?></p>
         <button data-id="<?=$item['basket_id']?>" class="delete">Delete</button>
-    </div><div>Jajhvbnm pfrf[
+          </div><div><button orders-id="<?=$item['basket_id']?>" class="add_orders ">Add to orders</button>
     </div>
 <?php endforeach;?>
+
+
+
+
+<script>
+    let buttons_orders = document.querySelectorAll('.add_orders');
+    buttons_orders.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let id = elem.getAttribute('orders-id');
+            (
+                async () => {
+                    const response = await fetch('/orders/add/?id=' + id);
+                    const answer = await response.json();
+
+                    console.log(answer);
+                }
+            )();
+        })
+    })
+</script>
+
+
 
 <script>
     let buttons = document.querySelectorAll('.delete');
