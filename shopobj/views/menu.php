@@ -13,4 +13,4 @@
 <a href="/">Main</a>
 <a href="/product/catalog">Catalog</a>
 <a href="/basket">Basket(<span id="count"><?=$count?></span>)</a><br>
-<a href="/product/orders">Orders</a>
+<a href="/orders">Orders</a>
