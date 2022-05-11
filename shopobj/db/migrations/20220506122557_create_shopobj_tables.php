@@ -34,8 +34,8 @@ final class CreateShopobjTables extends AbstractMigration
             ->addColumn('hash','varchar')
             ->create();
         $this->table('orders')
-            ->addColumn('name', 'text')
-            ->addColumn('session_id','int')
+            ->addColumn('product_id', 'int')
+            ->addColumn('session_id','text')
             ->create();
 
 
